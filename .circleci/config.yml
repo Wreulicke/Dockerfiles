@@ -17,7 +17,7 @@ workflows:
   scheduled:
     triggers:
       - schedule:
-          cron: "0-59 1 * * *"
+          cron: "0-59 * * * *"
           filters:
             branches:
               only: try-schedule-workflow
