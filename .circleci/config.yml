@@ -1,4 +1,4 @@
-version: 2.0
+version: 2
 jobs:
   build:
     docker:
@@ -8,6 +8,7 @@ jobs:
       - checkout
       - run:
           command: curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/wreulicke/circleci/trigger/891e084b-58d2-4816-87a2-faee57791375/
+
 workflows:
   version: 2
   all:
