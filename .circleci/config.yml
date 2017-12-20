@@ -6,8 +6,13 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
+      - setup_remote_docker
+      - run: cd redpen/1.9.0 && docker build .
       - run:
-          command: ./update.sh
+          command: | 
+              if [ $CIRCLE_BRANCH == "master" ]; then
+                ./update.sh
+              fi 
 
 workflows:
   version: 2
